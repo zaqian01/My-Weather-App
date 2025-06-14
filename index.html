@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWise: Your Global Weather Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://openweathermap.org/img/wn/01d@2x.png" type="image/png">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="weather-container">
+        <h1>WeatherWise</h1>
+
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city, e.g., London..." autocomplete="off">
+            <button id="search-button" aria-label="Search weather"><i class="fas fa-search"></i></button>
+            <button id="current-location-button" aria-label="Get current location weather"><i class="fas fa-location-dot"></i></button>
+        </div>
+
+        <div id="loading-spinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="weather-display" class="weather-display" style="display: none;">
+            <h2 id="city-name"><i class="fas fa-map-marker-alt"></i></h2>
+            <div class="main-weather-info">
+                <img id="weather-icon" src="" alt="Weather Icon" style="display: none;">
+                <p id="temperature"></p>
+                <p id="description"></p>
+            </div>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i class="fas fa-water"></i>
+                    <p>Humidity</p>
+                    <span id="humidity"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-wind"></i>
+                    <p>Wind Speed</p>
+                    <span id="wind-speed"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-cloud"></i>
+                    <p>Pressure</p>
+                    <span id="pressure"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-sun"></i>
+                    <p>Sunrise</p>
+                    <span id="sunrise"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-moon"></i>
+                    <p>Sunset</p>
+                    <span id="sunset"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-eye"></i>
+                    <p>Visibility</p>
+                    <span id="visibility"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="forecast-display" class="forecast-display" style="display: none;">
+            <h3>5-Day Forecast</h3>
+            <div class="forecast-items-container">
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;">
+            City not found or an issue occurred.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
